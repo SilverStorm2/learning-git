@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="page">
+      <main className="card" aria-labelledby="title">
+        <h1 id="title">Nauka Git w trzech zdaniach</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Git to dziennik zmian: commit zapisuje konkretny stan plików, dzięki czemu można łatwo
+          porównywać i cofać kroki.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          Nauka zaczyna się od małych repozytoriów, gdzie świadomie dodajesz pliki (<code>git add</code>)
+          i opisujesz każdy etap (<code>git commit</code>).
+        </p>
+        <p>
+          Gałęzie (<code>git branch</code>) pozwalają izolować eksperymenty, a regularny push utrzymuje
+          historię przejrzystą dla zespołu.
+        </p>
+      </main>
     </div>
   );
 }

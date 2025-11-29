@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Podstawy nauki Git</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #0f172a;
+        --panel: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22c55e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.15), transparent 35%),
+          radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.18), transparent 32%),
+          var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+      .card {
+        width: min(900px, 100%);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(17, 24, 39, 0.6));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(4px);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        letter-spacing: 0.02em;
+      }
+      p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .pill {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        line-height: 1.4;
+      }
+      .pill strong {
+        color: var(--accent);
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.6;
+        color: var(--text);
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" aria-labelledby="title">
+      <header>
+        <h1 id="title">Plan nauki Git</h1>
+        <p>
+          Krótka ściąga do startu z kontrolą wersji: podstawowe komendy, kluczowe koncepcje
+          i sprawdzone źródła, by szybko wejść w rytm commitów.
+        </p>
+        <p>
+          Nauka Gita zaczyna się od zrozumienia, że commit to zapisany stan pracy i punkt odniesienia.
+          Praktyka na małych repozytoriach uczy świadomego dodawania zmian oraz bezpiecznego cofania
+          kroków bez stresu. Regularne korzystanie z gałęzi buduje nawyk izolowania funkcji i utrzymywania
+          czytelnej historii projektu.
+        </p>
+        <div class="grid">
+          <div class="pill"><strong>Cel</strong><span>pewne operacje lokalne i na zdalnym repo</span></div>
+          <div class="pill"><strong>Czas</strong><span>3‑5 sesji po 30‑45 min</span></div>
+          <div class="pill"><strong>Mindset</strong><span>małe commity, częsty push</span></div>
+        </div>
+      </header>
+
+      <section class="grid" style="margin-top: 28px">
+        <article>
+          <h2>Podstawowe komendy</h2>
+          <ul>
+            <li><code>git status</code> – sprawdź co zmienione</li>
+            <li><code>git add .</code> – dodaj zmiany do commita</li>
+            <li><code>git commit -m "opis"</code> – zapisz punkt w historii</li>
+            <li><code>git log --oneline --graph</code> – szybki podgląd historii</li>
+            <li><code>git branch</code> / <code>git checkout -b feature</code> – praca na gałęziach</li>
+            <li><code>git push</code> / <code>git pull</code> – synchronizacja ze zdalnym</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Na co uważać</h2>
+          <ul>
+            <li>Commity rób małe i opisowe – łatwiej cofnąć lub zreviewować.</li>
+            <li>Przed pushem: <code>git status</code> i szybki <code>git diff</code>.</li>
+            <li>Nie nadpisuj historii wspólnej (<code>git push --force</code>) bez uzgodnienia.</li>
+            <li>Unikaj pracy na <code>master/main</code>; używaj gałęzi tematycznych.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Ćwiczenia na start</h2>
+          <ul>
+            <li>Stwórz repo, zrób 3 commity (np. README, plik JS, poprawka).</li>
+            <li>Załóż gałąź <code>feature/notes</code>, dodaj plik i zintegruj z <code>main</code>.</li>
+            <li>Rozwiąż prosty konflikt: zmień tę samą linię w dwóch gałęziach i zmerguj.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Głębiej</h2>
+          <ul>
+            <li>Staging vs working tree: co trafia do commita.</li>
+            <li>Rebase vs merge: kiedy porządkować historię, a kiedy zachować gałęzie.</li>
+            <li>Stash: <code>git stash</code> i <code>git stash pop</code> przy szybkiej zmianie kontekstu.</li>
+          </ul>
+        </article>
+      </section>
+
+      <footer style="margin-top: 28px">
+        <h2>Źródła</h2>
+        <ul>
+          <li><a href="https://git-scm.com/docs" target="_blank" rel="noreferrer">Oficjalna dokumentacja Git</a></li>
+          <li><a href="https://learngitbranching.js.org/" target="_blank" rel="noreferrer">Learn Git Branching (interaktywny)</a></li>
+          <li><a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noreferrer">Tutorial Atlassian</a></li>
+          <li><a href="https://ohmygit.org/" target="_blank" rel="noreferrer">Oh My Git! (gra)</a></li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>
