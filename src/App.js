@@ -17,6 +17,7 @@ function App() {
           Gałęzie (<code>git branch</code>) pozwalają izolować eksperymenty, a regularny push utrzymuje
           historię przejrzystą dla zespołu.
         </p>
+        
       </main>
     </div>
   );
